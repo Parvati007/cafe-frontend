@@ -1,9 +1,12 @@
 import {useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Register() {
 
     const [user,setUser]=useState({})
     const [error, setError]=useState()
+    const Navigate = useNavigate()
     const API_URL = import.meta.env.VITE_API_URL
 
     const handleSubmit =async()=>{
@@ -11,6 +14,7 @@ export default function Register() {
             const url=`${API_URL}/api/users/register`
             const result = await axios.post(url,user);
             setError("Registration successful!");
+            Navigate("/login")
 
         }catch(err){
 
@@ -44,6 +48,8 @@ export default function Register() {
              onChange={(e)=>setUser({...user, password: e.target.value})} />
         </p>
         <button onClick={handleSubmit}>Submit</button>
+        <hr />
+        <Link to="/login"> Already a member? Login Here...</Link>
     </div>
   )
 }
