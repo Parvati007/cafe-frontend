@@ -1,9 +1,7 @@
-import React from "react";
-import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
-function LastUpdate({dt}) {
+function LastUpdate({ dt }) {
   const updatedAt = new Date(dt);
   const diffInMs = Date.now() - updatedAt.getTime();
   const diffInDays = Math.ceil(diffInMs / 60000 / (60 * 24));
@@ -11,7 +9,7 @@ function LastUpdate({dt}) {
 }
 
 export default function Products() {
-  const [users, setUsers] = useState([]);
+  const [products, setProducts] = useState([]);
   const [error, setError] = useState();
   const [page, setPage] = useState(1);
   const [searchVal, setSearchVal] = useState("");
@@ -22,20 +20,20 @@ export default function Products() {
   const formRef = useRef();
 
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    role: "",
+    productName: "",
+    description: "",
+    price: "",
+    imgUrl: "",
   });
-  
+
   const API_URL = import.meta.env.VITE_API_URL;
-  const fetchUsers = async () => {
+
+  const fetchProducts = async () => {
     try {
       setLoading("Loading...");
-      const url = `${API_URL}/api/users/showusers/?page=${page}&limit=${limit}&search=${searchVal}`;
+      const url = `${API_URL}/api/products/?page=${page}&limit=${limit}&search=${searchVal}`;
       const result = await axios.get(url);
-      setUsers(result.data.users);
+      setProducts(result.data.products);
       setTotalPages(result.data.total);
       setLoading();
     } catch (err) {
@@ -45,15 +43,15 @@ export default function Products() {
   };
 
   useEffect(() => {
-    fetchUsers();
+    fetchProducts();
   }, [page]);
 
   const handleDelete = async (id) => {
     try {
-      const url = `${API_URL}/api/users/${id}`;
-      const result = await axios.delete(url);
-      setError("User deleted successfully");
-      fetchUsers();
+      const url = `${API_URL}/api/products/${id}`;
+      await axios.delete(url);
+      setError("Product deleted successfully");
+      fetchProducts();
     } catch (err) {
       console.log(err);
       setError("Something went wrong");
@@ -64,10 +62,10 @@ export default function Products() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleEdit = (user) => {
+  const handleEdit = (product) => {
     setError();
-    setForm(user);
-    setEditId(user._id);
+    setForm(product);
+    setEditId(product._id);
   };
 
   const handleUpdate = async (e) => {
@@ -77,9 +75,9 @@ export default function Products() {
       frm.reportValidity();
       return;
     }
-    const url = `${API_URL}/api/users/${editId}`;
-    const result = await axios.patch(url, form);
-    setError("User details modified successfully.");
+    const url = `${API_URL}/api/products/${editId}`;
+    await axios.patch(url, form);
+    setError("Product updated successfully.");
     resetForm();
   };
 
@@ -90,9 +88,9 @@ export default function Products() {
       frm.reportValidity();
       return;
     }
-    const url = `${API_URL}/api/users`;
-    const result = await axios.post(url, form);
-    setError("New user added successfully.");
+    const url = `${API_URL}/api/products`;
+    await axios.post(url, form);
+    setError("New product added successfully.");
     resetForm();
   };
 
@@ -103,94 +101,59 @@ export default function Products() {
 
   const resetForm = () => {
     setForm({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      role: "",
+      productName: "",
+      description: "",
+      price: "",
+      imgUrl: "",
     });
     setEditId(null);
-    fetchUsers();
-  };
-
-  const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      if (editId === "edit") {
-        const url = `${API_URL}/api/users/${editId}`;
-        const result = await axios.patch(url, form);
-        setError("User details modified successfully.");
-      } else if (editId === "add") {
-        const url = `${API_URL}/api/users`;
-        const result = await axios.post(url, form);
-        setError("New user added successfully.");
-      }
-    } catch (err) {
-      console.log(err);
-      setError("Something went wrong");
-    }
+    fetchProducts();
   };
 
   const handleSearch = () => {
     setPage(1);
     setTotalPages(1);
-    fetchUsers();
+    fetchProducts();
   };
+
   return (
     <div>
       <div>
-        <h2>User Management</h2>
-        {error}
+        <h2>Products Management</h2>
+        {error && <p>{error}</p>}
         <div>
           <form ref={formRef}>
             <input
               type="text"
-              name="firstName"
-              value={form.firstName}
-              placeholder="First Name"
+              name="productName"
+              value={form.productName}
+              placeholder="Product Name"
               onChange={handleChange}
               required
             />
             <input
               type="text"
-              name="lastName"
-              value={form.lastName}
-              placeholder="Last Name"
+              name="description"
+              value={form.description}
+              placeholder="Description"
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="number"
+              name="price"
+              value={form.price}
+              placeholder="Price"
               onChange={handleChange}
               required
             />
             <input
               type="text"
-              name="email"
-              value={form.email}
-              placeholder="Email Address"
+              name="imgUrl"
+              value={form.imgUrl}
+              placeholder="Image URL"
               onChange={handleChange}
               required
-            />
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              placeholder="New Password"
-              onChange={handleChange}
-              required
-            />
-            <select
-              name="role"
-              value={form.role}
-              required
-              onChange={handleChange}
-            >
-              <option value="">--Select Role --</option>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
-            <input
-              type="text"
-              name="role"
-              value={form.role}
-              placeholder="Role"
-              onChange={handleChange}
             />
             {editId ? (
               <>
@@ -206,46 +169,47 @@ export default function Products() {
         <div>
           <input
             type="text"
-            placeholder="First Name"
+            placeholder="Search Product Name"
             onChange={(e) => setSearchVal(e.target.value)}
           />
           <button onClick={handleSearch}>Search</button>
         </div>
         <br />
-        {loading}
+        {loading && <p>{loading}</p>}
         <div>
           <table border="1">
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email address</th>
-                <th>Role</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
                 <th>Updated</th>
-                <th>Action</th>
+                <th>Actions</th>
               </tr>
             </thead>
-            {users &&
-              users.map((user) => (
-                <tbody key={user._id}>
-                  <tr>
-                    <td>{user.firstName}</td>
-                    <td>{user.lastName}</td>
-                    <td>{user.email}</td>
-                    <td>{user.role}</td>
+            <tbody>
+              {products &&
+                products.map((product) => (
+                  <tr key={product._id}>
+                    <td>{product.productName}</td>
+                    <td>{product.description}</td>
+                    <td>{product.price}</td>
                     <td>
-                      <LastUpdate dt={user.updatedAt} />
+                      <img src={product.imgUrl} alt="product" width="50" />
                     </td>
                     <td>
-                      <button onClick={() => handleEdit(user)}>Edit</button>
-                      <button onClick={() => handleDelete(user._id)}>
+                      <LastUpdate dt={product.updatedAt} />
+                    </td>
+                    <td>
+                      <button onClick={() => handleEdit(product)}>Edit</button>
+                      <button onClick={() => handleDelete(product._id)}>
                         Delete
                       </button>
                     </td>
                   </tr>
-                </tbody>
-              ))}
-            <tfoot></tfoot>
+                ))}
+            </tbody>
           </table>
           <br />
           <div>
@@ -268,3 +232,4 @@ export default function Products() {
     </div>
   );
 }
+
