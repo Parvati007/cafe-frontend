@@ -1,10 +1,12 @@
-import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import App, { AppContext } from "../App";
+import React, { useContext } from "react";
 
 export default function Login() {
+  const {user, setUser} = useContext(AppContext);
   const [user, setUser] = useState({});
   const [error, setError] = useState();
   const Navigate = useNavigate()
