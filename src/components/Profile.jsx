@@ -24,16 +24,16 @@ export default function Profile() {
     <div>
       <h3>My Profile</h3>
       <p>
-        <input type="text" defaultValue={profile.firstName} />
+        <input type="text" placeholder="First Name"defaultValue={profile.firstName} />
       </p>
       <p>
-        <input type="text" defaultValue={profile.lastName} />
+        <input type="text" placeholder="Last Name"defaultValue={profile.lastName} />
       </p>
       <p>
-        <input type="text" defaultValue={profile.email} />
+        <input type="email" placeholder="Email"defaultValue={profile.email} />
       </p>
       <p>
-        <input type="password" defaultValue={profile.password} />
+        <input type="password" placeholder="Password"defaultValue={profile.password} />
       </p>
       <button>Update Profile</button>
     </div>
