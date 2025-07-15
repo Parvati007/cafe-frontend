@@ -91,7 +91,9 @@ export default function Users1() {
       return;
     }
     const url = `${API_URL}/api/users`;
-    const result = await axios.post(url, form);
+    const result = await axios.post(url, form,{
+      headers:{Authorization:`Bearer ${user.token}`}
+    });
     setError("New user added successfully.");
     resetForm();
   };
