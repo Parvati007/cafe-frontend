@@ -12,7 +12,7 @@ export default function Header() {
       {/* <Link to="/admin">Admin</Link> */}
 
       -{user?.role === "admin" && <Link to="/admin">Admin</Link>}
-      {user?.token ? <Link to="/profile">Profile</Link> : <Link to="/login">Login</Link> }
+      {user?.token ? <Link to="/profile">Profile</Link> : <Link to="/login">Login</Link>}
 
 
     </div>
