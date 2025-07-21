@@ -3,6 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AppContext } from "../App";
 import { useFetcher } from "react-router-dom";
+import "./Orders.css"
 export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState();

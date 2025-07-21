@@ -1,0 +1,21 @@
+/* Footer.css */
+
+.footer {
+  background-color: #fff3e6;
+  color: #5a3e36;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  border-top: 2px solid #f3d9c1;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6f4e37;
+}

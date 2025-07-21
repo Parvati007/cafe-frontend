@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
+import "./Products.css"
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState();
@@ -185,7 +186,10 @@ export default function Products() {
                 <td>{value.productName}</td>
                 <td>{value.description}</td>
                 <td>{value.price}</td>
-                <td>{value.imgUrl}</td>
+               <td>
+  <img src={value.imgUrl} alt={value.productName} style={{ width: "80px", height: "60px", objectFit: "cover", borderRadius: "6px" }} />
+</td>
+
                 <td>
                   <button onClick={() => handleEdit(value)}>Edit</button>
                   <button onClick={() => handleDelete(value._id)}>

@@ -1,0 +1,32 @@
+/* Admin.css */
+
+.admin-nav {
+  background-color: #fff3e6;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 1rem auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.admin-nav a {
+  color: #6f4e37;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-nav a:hover {
+  background-color: #ffe6cc;
+}
+
+.admin-outlet {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
