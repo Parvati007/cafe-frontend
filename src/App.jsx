@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import "./App.css"
 import Register from "./components/Register";
 import Product from "./components/Product";
 import Cart from "./components/Cart";

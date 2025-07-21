@@ -1,1 +1,36 @@
+/* App.css for Café theme */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf6ec;
+  color: #3e2c23;
+}
+
+.App-Container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #6b4226;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #c97c5d;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 

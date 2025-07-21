@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./Users.css"
+
 
 function LastUpdate({dt}) {
   const updatedAt = new Date(dt);
