@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { AppContext } from "../App";
-import "./Order.css"
 export default function Order() {
   const API_URL = import.meta.env.VITE_API_URL;
   const { user } = useContext(AppContext);
@@ -24,44 +23,37 @@ export default function Order() {
   }, []);
 
   return (
-    <div className="order-container">
-  <h3>My Orders</h3>
-  {orders &&
-    orders.map((order) => (
-      <div className="single-order" key={order._id}>
-        <p className="order-id">Order ID: {order._id}</p>
-        <p>Order Value: ₹{order.orderValue}</p>
-        <p>
-          Status:{" "}
-          <span className={`status ${order.status.toLowerCase()}`}>
-            {order.status}
-          </span>
-        </p>
-
-        <table className="order-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {order.items.map((item) => (
-              <tr key={item._id}>
-                <td>{item.productName}</td>
-                <td>₹{item.price}</td>
-                <td>{item.qty}</td>
-                <td>₹{item.qty * item.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <hr />
-      </div>
-    ))}
-</div>
-
+    <div>
+      <h3>My Orders</h3>
+      {orders &&
+        orders.map((order) => (
+          <div>
+            <p>OrderId:{order._id}</p>
+            <p>Order Value: {order.orderValue} </p>
+            <p>Status:{order.status}</p>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              {order.items.map((item) => (
+                <tbody key={item._id}>
+                  <tr>
+                    <td>{item.productName}</td>
+                    <td>{item.price}</td>
+                    <td>{item.qty}</td>
+                    <td>{item.qty * item.price}</td>
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+            <hr />
+          </div>
+        ))}
+    </div>
   );
 }
