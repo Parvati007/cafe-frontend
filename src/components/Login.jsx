@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
+import "./Login.css";
+
 export default function Login() {
   const {user, setUser} = useContext(AppContext);
   const [error, setError] = useState();
@@ -20,29 +22,30 @@ export default function Login() {
       setError("Something went wrong");
     }
   };
-  return (
-    <div>
-      <h2>Login</h2>
-      {error}
-      <p>
-        <input
-          type="text"
-          placeholder="Email Address"
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-        />
-      </p>
-      <p>
-        <button onClick={handleSubmit}>Submit</button>
-      </p>
-      <hr />
-      <Link to="/register">Create Account</Link>
-    </div>
-  );
+ return (
+  <div className="LoginContainer">
+    <h2>Login</h2>
+    {error && <div className="error">{error}</div>}
+    <p>
+      <input
+        type="text"
+        placeholder="Email Address"
+        onChange={(e) => setUser({ ...user, email: e.target.value })}
+      />
+    </p>
+    <p>
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={(e) => setUser({ ...user, password: e.target.value })}
+      />
+    </p>
+    <p>
+      <button onClick={handleSubmit}>Submit</button>
+    </p>
+    <hr />
+    <Link to="/register">Create Account</Link>
+  </div>
+);
+
 }

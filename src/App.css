@@ -1,2 +1,115 @@
+/* App.css – CodeBrew Café Styling */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f2;
+  color: #3e2c1c;
+}
+
+.App-Container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #5c4033;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+footer {
+  margin-top: auto;
+}
+
+a {
+  color: #d2b48c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffdab9;
+}
+
+button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6e3b28;
+}
+
+input, select, textarea {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #c4a484;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fffdf9;
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.1);
+  border-radius: 12px;
+}
+
+.card {
+  background-color: #fffaf4;
+  border: 1px solid #e6d5c3;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4 {
+  color: #4b2e2e;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4b2e2e;
+  padding: 1rem 2rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+nav a.active {
+  border-bottom: 2px solid #ffdab9;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+}
 
 

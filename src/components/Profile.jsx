@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import "./Profile.css"
 export default function Profile() {
   const [profile, setProfile] = useState({});
   const { user, setUser } = useContext(AppContext);
@@ -44,13 +45,15 @@ export default function Profile() {
     }
   };
   return (
-    <div>
+  <div className="Profile-Container">
+    <div className="Profile-Box">
       <h3>My Profile</h3>
       <button onClick={logout}>Logout</button>
       <p>
         <input
           name="firstName"
           type="text"
+          placeholder="First Name"
           onChange={handleChange}
           defaultValue={profile.firstName}
         />
@@ -59,6 +62,7 @@ export default function Profile() {
         <input
           name="lastName"
           type="text"
+          placeholder="LastName"
           onChange={handleChange}
           defaultValue={profile.lastName}
         />
@@ -67,6 +71,7 @@ export default function Profile() {
         <input
           name="email"
           type="text"
+          placeholder="Email"
           onChange={handleChange}
           defaultValue={profile.email}
         />
@@ -75,11 +80,14 @@ export default function Profile() {
         <input
           name="password"
           type="password"
+          placeholder="Password"
           onChange={handleChange}
           defaultValue={profile.password}
         />
       </p>
       <button onClick={handleSubmit}>Update Profile</button>
     </div>
-  );
+  </div>
+);
+
 }

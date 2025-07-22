@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
+import "./Products.css";
+
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState();
@@ -115,9 +117,9 @@ export default function Products() {
     });
   };
   return (
-    <div>
-      <h2>Product Management</h2>
-      {error}
+   <div className="Product-Container">
+    <h2>Product Management</h2>
+    {error}
       <div>
         <form ref={frmRef}>
           <input

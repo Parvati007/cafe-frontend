@@ -1,1 +1,58 @@
+/* Order.css – Customer Order History View */
+
+.OrderContainer {
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fffdf9;
+  color: #3a2e2e;
+}
+
+.OrderContainer h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #5a3928;
+}
+
+.OrderCard {
+  background-color: #fdf4eb;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(160, 118, 90, 0.1);
+}
+
+.OrderCard p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #4b352c;
+}
+
+.OrderTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.OrderTable th,
+.OrderTable td {
+  padding: 0.8rem;
+  border: 1px solid #cfc1b7;
+  text-align: center;
+}
+
+.OrderTable th {
+  background-color: #e9d7c3;
+  color: #4d362d;
+}
+
+.OrderTable td {
+  background-color: #fdf9f4;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dcc4b4;
+  margin-top: 1.5rem;
+}
 

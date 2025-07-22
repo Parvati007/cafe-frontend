@@ -1,1 +1,96 @@
+/* Users.css – Styling for User Management component */
+
+.user-management-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fffaf3;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(89, 62, 44, 0.1);
+}
+
+.user-management-container h2 {
+  text-align: center;
+  color: #5c4033;
+  margin-bottom: 1.5rem;
+}
+
+.user-form input,
+.user-form select {
+  padding: 0.6rem;
+  margin: 0.5rem;
+  border: 1px solid #c9a77b;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 180px;
+}
+
+.user-form button {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.user-form button:hover {
+  background-color: #6f3c25;
+}
+
+.user-table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd0c1;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f3e2d2;
+  color: #3e2c1c;
+}
+
+.user-table td button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #7a4e35;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-table td button:hover {
+  background-color: #5e3625;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.pagination button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #a9714b;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #d3c0b0;
+  cursor: not-allowed;
+}
 

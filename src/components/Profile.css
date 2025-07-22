@@ -1,1 +1,65 @@
+/* Profile.css – Styling for the user profile page */
+
+.Profile-Container {
+  background-color: #fff7f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.Profile-Box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 12px rgba(109, 71, 45, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.Profile-Box h3 {
+  text-align: center;
+  color: #5e3c28;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.Profile-Box p {
+  margin: 1rem 0;
+}
+
+.Profile-Box input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #c9a77b;
+  font-size: 1rem;
+  background-color: #fff9f3;
+  transition: border-color 0.3s;
+}
+
+.Profile-Box input:focus {
+  outline: none;
+  border-color: #a9714b;
+  background-color: #fff4eb;
+}
+
+.Profile-Box button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Profile-Box button:hover {
+  background-color: #6c4329;
+}
 

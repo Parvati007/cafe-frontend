@@ -1,1 +1,80 @@
+/* Orders.css – Admin Order Management for CodeBrew Café */
+
+.Orders-Container {
+  padding: 2rem;
+  background-color: #fffaf5;
+  font-family: "Segoe UI", sans-serif;
+  color: #3f2c1d;
+}
+
+.Orders-Container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #5e3c28;
+}
+
+.Orders-Filter {
+  margin-bottom: 1rem;
+}
+
+.Orders-Filter select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #b9a391;
+  border-radius: 8px;
+  background-color: #f5e8dc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Order-List {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Order-Item {
+  background-color: #fdf1e5;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Order-Info {
+  font-size: 1rem;
+  color: #533c2c;
+  flex: 1 1 70%;
+}
+
+.Order-Actions button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.Order-Actions .cancel {
+  background-color: #ff7a7a;
+  color: white;
+}
+
+.Order-Actions .cancel:hover {
+  background-color: #e05959;
+}
+
+.Order-Actions .complete {
+  background-color: #58c78c;
+  color: white;
+}
+
+.Order-Actions .complete:hover {
+  background-color: #3aa971;
+}
 

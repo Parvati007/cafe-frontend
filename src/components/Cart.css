@@ -1,0 +1,80 @@
+/* Cart.css */
+
+.cart-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background-color: #fff8f2;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cart-container h2 {
+  text-align: center;
+  color: #4b2e2e;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdf1e7;
+  border: 1px solid #e0cfc2;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.cart-item span {
+  font-size: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.cart-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-buttons button {
+  background-color: #a0522d;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cart-buttons button:hover {
+  background-color: #8b4513;
+}
+
+.order-summary {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cart-container button.order-btn {
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4b2e2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-container button.order-btn:hover {
+  background-color: #3b211f;
+}
