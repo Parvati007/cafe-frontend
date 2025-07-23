@@ -3,12 +3,12 @@
   "name": "CodeBrew Cafe",
   "icons": [
     {
-      "src": "icons/Coffee-192x192.png",
+      "src": "icons/CodeBrew_Cafe_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icons/Coffee-512x512.png",
+      "src": "icons/CodeBrew_Cafe_512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
