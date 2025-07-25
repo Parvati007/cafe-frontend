@@ -1,5 +1,3 @@
-/* Products.css – Stylish admin interface for managing products */
-
 .Product-Container {
   padding: 2rem;
   background-color: #fffaf5;
@@ -74,7 +72,7 @@ td button {
 }
 
 td button:first-child {
-  background-color: #3d9970; /* Edit */
+  background-color: #3d9970; 
 }
 
 td button:first-child:hover {
@@ -82,7 +80,7 @@ td button:first-child:hover {
 }
 
 td button:last-child {
-  background-color: #d9534f; /* Delete */
+  background-color: #d9534f; 
 }
 
 td button:last-child:hover {

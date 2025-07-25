@@ -1,7 +1,5 @@
-/* Header.css */
-
 .navbar {
-  background-color: #4b2e2e; /* rich coffee brown */
+  background-color: #4b2e2e; 
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -54,4 +52,24 @@
     width: 100%;
   }
 }
+
+ .cart-link-wrapper {
+  position: relative;
+  display: flex;         
+  align-items: center;   
+}
+
+
+.cart-count {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 

@@ -1,5 +1,3 @@
-/* Product.css – Customer-facing product listing for CodeBrew Café */
-
 .Product-List {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

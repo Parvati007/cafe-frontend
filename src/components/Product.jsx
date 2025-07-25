@@ -7,7 +7,7 @@ export default function Product() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [products, setProducts] = useState([]);
   const [error, setError] = useState();
-  const [visibleCount, setVisibleCount] = useState(6); // Initial visible products
+  const [visibleCount, setVisibleCount] = useState(6); 
   const { user, cart, setCart } = useContext(AppContext);
 
   const fetchProducts = async () => {
