@@ -133,9 +133,6 @@
     font-size: 0.85rem;
   }
 
-  .user-table thead {
-    display: none; /* optional: for mobile-friendly display */
-  }
 
   .user-table tr {
     display: block;
