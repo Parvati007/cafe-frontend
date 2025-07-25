@@ -157,7 +157,7 @@ export default function Users() {
       />
       <button onClick={() => fetchUsers()}>Search</button>
     </div>
-
+  <div className="table-wrapper">
     <table className="user-table">
       <thead>
         <tr>
@@ -183,6 +183,7 @@ export default function Users() {
         ))}
       </tbody>
     </table>
+    </div>
 
     <div className="pagination">
       <button disabled={page === 1} onClick={() => setPage(page - 1)}>

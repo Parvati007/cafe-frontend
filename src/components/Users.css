@@ -126,12 +126,17 @@
     margin: 0.5rem 0;
   }
 
-  .user-table {
+  /* .user-table {
     width: 100%;
     overflow-x: auto;
     display: block;
     font-size: 0.85rem;
-  }
+  } */
+   .user-table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 
   .user-table tr {
@@ -164,5 +169,21 @@
   .pagination button {
     width: 100%;
   }
+
+  .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
 }
+.user-form input,
+.user-form select,
+.user-form button,
+.user-search {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+}
+
+
+
 
