@@ -170,7 +170,7 @@ export default function Products() {
         <input type="text" onChange={(e) => setSearchVal(e.target.value)} />
         <button onClick={fetchProducts}>Search</button>
       </div>
-      <div class="table-wrapper">
+      <div>
         <table border="1">
           <thead>
             <tr>

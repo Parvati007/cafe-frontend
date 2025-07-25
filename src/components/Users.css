@@ -126,28 +126,32 @@
     margin: 0.5rem 0;
   }
 
-   .user-table, .product-table {
+  .user-table {
     width: 100%;
     overflow-x: auto;
-    display: table; /* Keep table layout */
+    display: block;
     font-size: 0.85rem;
   }
 
-  .user-table thead, .product-table thead {
-    display: table-header-group; /* Ensure headers are visible */
+
+  .user-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd0c1;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: #fff;
   }
 
-  .user-table tr, .product-table tr {
-    display: table-row; /* Keep row format */
+  .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #eee;
   }
 
-  .user-table td, .product-table td {
-    display: table-cell; /* Prevent block/flex behavior */
-    padding: 0.4rem;
-    border: 1px solid #eee;
-  }
-
-  .user-table td:last-child, .product-table td:last-child {
+  .user-table td:last-child {
     border-bottom: none;
   }
 

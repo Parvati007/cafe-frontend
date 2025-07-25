@@ -1,4 +1,4 @@
-/* .Product-Container {
+ .Product-Container {
   padding: 2rem;
   background-color: #fffaf5;
   font-family: 'Segoe UI', sans-serif;
@@ -171,82 +171,12 @@ input[type="text"] {
 }
 
 /* Scrollbar Styling for Horizontal Table Scroll */
-/* table::-webkit-scrollbar {
+ table::-webkit-scrollbar {
   height: 6px;
 }
 
 table::-webkit-scrollbar-thumb {
   background: #c2b3a3;
   border-radius: 6px;
-} */ 
-
-@media screen and (max-width: 600px) {
-  .Product-Container {
-    padding: 1rem;
-  }
-
-  .Product-Container h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
-    text-align: center;
-  }
-
-  form {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  form input,
-  input[type="text"],
-  form button {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  /* ✅ Wrap table in a scrollable container */
-  .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
-
-  table {
-    width: max-content;
-    min-width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-
-  thead {
-    display: table-header-group; /* ✅ Ensures headers are visible */
-  }
-
-  tr {
-    display: table-row;
-  }
-
-  th, td {
-    display: table-cell;
-    white-space: nowrap;
-    padding: 0.75rem;
-  }
-
-  .pagination-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  .pagination-controls button {
-    width: 100%;
-    max-width: 200px;
-    font-size: 0.9rem;
-  }
-}
-
-
+}  
 
