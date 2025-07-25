@@ -154,6 +154,21 @@ export default function Products() {
             </tr>
           </thead>
           <tbody>
+  {products.map((value) => (
+    <tr key={value._id}>
+      <td data-label="Product Name">{value.productName}</td>
+      <td data-label="Description">{value.description}</td>
+      <td data-label="Price">{value.price}</td>
+      <td data-label="Image URL">{value.imgUrl}</td>
+      <td data-label="Action">
+        <button onClick={() => handleEdit(value)}>Edit</button>
+        <button onClick={() => handleDelete(value._id)}>Delete</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
+          {/* <tbody>
             {products.map((value) => (
               <tr key={value._id}>
                 <td>{value.productName}</td>
@@ -166,7 +181,7 @@ export default function Products() {
                 </td>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
         </table>
       </div>
 
