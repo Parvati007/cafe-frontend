@@ -355,22 +355,24 @@ table::-webkit-scrollbar-thumb {
   border-radius: 6px;
 } */
 
-/* ====== Base Styles ====== */
+/* ========== General Container Styling ========== */
 .Product-Container {
-  max-width: 1000px;
-  margin: 2rem auto;
   padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .Product-Container h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: #333;
 }
 
+/* ========== Form Styling ========== */
 .Product-Container form {
   display: flex;
   flex-wrap: wrap;
@@ -378,80 +380,100 @@ table::-webkit-scrollbar-thumb {
   margin-bottom: 1rem;
 }
 
-.Product-Container input {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
+.Product-Container input[type="text"] {
+  padding: 0.5rem;
   border-radius: 6px;
-  flex: 1 1 200px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 180px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .Product-Container button {
-  padding: 0.6rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
+  border: none;
+  background-color: #3498db;
+  color: white;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .Product-Container button:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
 }
 
+/* ========== Search Styling ========== */
+.Product-Container > div:nth-of-type(2) {
+  margin: 1rem 0;
+}
+
+.Product-Container > div:nth-of-type(2) input[type="text"] {
+  width: 60%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.Product-Container > div:nth-of-type(2) button {
+  margin-left: 1rem;
+}
+
+/* ========== Table Styling ========== */
 .Product-Container table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
   background-color: #fff;
+  margin-top: 1rem;
+  border: 2px solid #ccc;
 }
 
 .Product-Container th,
 .Product-Container td {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
   text-align: left;
+  vertical-align: top;
 }
 
 .Product-Container th {
   background-color: #f0f0f0;
   font-weight: bold;
+  color: #333;
 }
 
-.Product-Container td button {
-  margin-right: 0.5rem;
-}
-
+/* ========== Pagination Styling ========== */
 .Product-Container > div:last-child {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
-  align-items: center;
+  font-size: 1rem;
 }
 
-/* ====== Responsive Styles ====== */
+/* ========== Responsive ========== */
 @media screen and (max-width: 600px) {
   .Product-Container {
     padding: 1rem;
-    margin: 1rem;
-    border-radius: 8px;
-  }
-
-  .Product-Container h2 {
-    font-size: 1.4rem;
   }
 
   .Product-Container form {
     flex-direction: column;
-    align-items: stretch;
   }
 
-  .Product-Container input,
+  .Product-Container input[type="text"],
   .Product-Container button {
     width: 100%;
-    font-size: 0.9rem;
-    box-sizing: border-box;
+  }
+
+  .Product-Container > div:nth-of-type(2) input[type="text"],
+  .Product-Container > div:nth-of-type(2) button {
+    width: 100%;
+    margin: 0.3rem 0;
   }
 
   .Product-Container table {
@@ -459,19 +481,18 @@ table::-webkit-scrollbar-thumb {
     overflow-x: auto;
     white-space: nowrap;
     font-size: 0.85rem;
+    border: 2px solid #ccc;
   }
 
   .Product-Container th,
   .Product-Container td {
-    padding: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
   }
 
   .Product-Container > div:last-child {
     flex-direction: column;
     gap: 0.5rem;
   }
-
-  .Product-Container td button {
-    margin-bottom: 0.3rem;
-  }
 }
+
