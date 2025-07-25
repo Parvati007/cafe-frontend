@@ -169,6 +169,21 @@ export default function Users() {
         </tr>
       </thead>
       <tbody>
+  {users.map((value) => (
+    <tr key={value._id}>
+      <td data-label="First Name">{value.firstName}</td>
+      <td data-label="Last Name">{value.lastName}</td>
+      <td data-label="Email">{value.email}</td>
+      <td data-label="Role">{value.role}</td>
+      <td data-label="Actions">
+        <button onClick={() => handleEdit(value)}>Edit</button>
+        <button onClick={() => handleDelete(value._id)}>Delete</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
+      {/* <tbody>
         {users.map((value) => (
           <tr key={value._id}>
             <td>{value.firstName}</td>
@@ -181,7 +196,7 @@ export default function Users() {
             </td>
           </tr>
         ))}
-      </tbody>
+      </tbody> */}
     </table>
     </div>
 
