@@ -113,3 +113,61 @@ input[type="text"] {
   border: 1px solid #ccc;
 }
 
+@media screen and (max-width: 600px) {
+  .Product-Container {
+    padding: 1rem;
+  }
+
+  .Product-Container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  form input,
+  input[type="text"] {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  form button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .pagination-controls button {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+}
+table::-webkit-scrollbar {
+  height: 6px;
+}
+
+table::-webkit-scrollbar-thumb {
+  background: #c2b3a3;
+  border-radius: 6px;
+}
+

@@ -76,3 +76,46 @@
   background-color: #3aa971;
 }
 
+@media screen and (max-width: 600px) {
+  .Orders-Container {
+    padding: 1rem;
+  }
+
+  .Orders-Container h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .Orders-Filter select {
+    width: 100%;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .Order-Item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .Order-Info {
+    flex: 1 1 100%;
+    font-size: 0.95rem;
+  }
+
+  .Order-Actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .Order-Actions button {
+    width: 48%;
+    font-size: 0.85rem;
+  }
+}
+
+

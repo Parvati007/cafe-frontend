@@ -74,7 +74,7 @@
 @media screen and (max-width: 600px) {
   .cart-count {
     top: 3px;
-    right: -2px; /* 👈 closer to text/icon */
+    right: -2px; 
     padding: 2px 6px;
     font-size: 0.7rem;
   }

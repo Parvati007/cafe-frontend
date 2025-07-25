@@ -92,3 +92,80 @@
   cursor: not-allowed;
 }
 
+@media screen and (max-width: 600px) {
+  .user-management-container {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+
+  .user-management-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-form input,
+  .user-form select {
+    width: 100%;
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+  }
+
+  .user-form button {
+    width: 100%;
+    margin: 0.4rem 0;
+  }
+
+  .user-search {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .user-table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    font-size: 0.85rem;
+  }
+
+  .user-table thead {
+    display: none; /* optional: for mobile-friendly display */
+  }
+
+  .user-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd0c1;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: #fff;
+  }
+
+  .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .user-table td:last-child {
+    border-bottom: none;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .pagination button {
+    width: 100%;
+  }
+}
+
