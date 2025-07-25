@@ -117,100 +117,160 @@ export default function Products() {
     });
   };
   return (
-   <div className="Product-Container">
-    <h2>Product Management</h2>
-    {error}
-      <div>
-        <form ref={frmRef}>
-          <input
-            name="productName"
-            value={form.productName}
-            type="text"
-            placeholder="Product Name"
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="description"
-            value={form.description}
-            type="text"
-            placeholder="Description"
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="price"
-            value={form.price}
-            type="text"
-            placeholder="Price"
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="imgUrl"
-            value={form.imgUrl}
-            type="text"
-            placeholder="Image Url"
-            onChange={handleChange}
-            required
-          />
+    <div className="product-management-container">
+      <h2>Product Management</h2>
+      {error && <div className="error-message">{error}</div>}
 
+      <form ref={frmRef} className="product-form">
+        <input name="productName" value={form.productName} type="text" placeholder="Product Name" onChange={handleChange} required />
+        <input name="description" value={form.description} type="text" placeholder="Description" onChange={handleChange} required />
+        <input name="price" value={form.price} type="text" placeholder="Price" onChange={handleChange} required />
+        <input name="imgUrl" value={form.imgUrl} type="text" placeholder="Image URL" onChange={handleChange} required />
 
-          {editId ? (
-            <>
-              <button onClick={handleUpdate}>Update</button>
-              <button onClick={handleCancel}>Cancel</button>
-            </>
-          ) : (
-            <button onClick={handleAdd}>Add</button>
-          )}
-        </form>
-      </div>
-      <div>
-        <input type="text" onChange={(e) => setSearchVal(e.target.value)} />
+        {editId ? (
+          <>
+            <button onClick={handleUpdate}>Update</button>
+            <button onClick={handleCancel}>Cancel</button>
+          </>
+        ) : (
+          <button onClick={handleAdd}>Add</button>
+        )}
+      </form>
+
+      <div className="product-search">
+        <input type="text" placeholder="Search..." value={searchVal} onChange={(e) => setSearchVal(e.target.value)} />
         <button onClick={fetchProducts}>Search</button>
       </div>
-      <div>
-        <table border="1">
+
+      <div className="table-wrapper">
+        <table className="product-table">
           <thead>
             <tr>
               <th>Product Name</th>
               <th>Description</th>
               <th>Price</th>
-              <th>Image Url</th>
+              <th>Image URL</th>
               <th>Action</th>
             </tr>
           </thead>
-          {products.map((value) => (
-            <tbody key={value._id}>
-              <tr>
+          <tbody>
+            {products.map((value) => (
+              <tr key={value._id}>
                 <td>{value.productName}</td>
                 <td>{value.description}</td>
                 <td>{value.price}</td>
                 <td>{value.imgUrl}</td>
                 <td>
                   <button onClick={() => handleEdit(value)}>Edit</button>
-                  <button onClick={() => handleDelete(value._id)}>
-                    Delete
-                  </button>
+                  <button onClick={() => handleDelete(value._id)}>Delete</button>
                 </td>
               </tr>
-            </tbody>
-          ))}
+            ))}
+          </tbody>
         </table>
       </div>
-      <div>
-        <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-          Previous
-        </button>
+
+      <div className="pagination">
+        <button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>
         Page {page} of {totalPages}
-        <button
-          disabled={page === totalPages}
-          onClick={() => setPage(page + 1)}
-        >
-          Next
-        </button>
+        <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>Next</button>
       </div>
     </div>
   );
+  //  <div className="Product-Container">
+  //   <h2>Product Management</h2>
+  //   {error}
+  //     <div>
+  //       <form ref={frmRef}>
+  //         <input
+  //           name="productName"
+  //           value={form.productName}
+  //           type="text"
+  //           placeholder="Product Name"
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           name="description"
+  //           value={form.description}
+  //           type="text"
+  //           placeholder="Description"
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           name="price"
+  //           value={form.price}
+  //           type="text"
+  //           placeholder="Price"
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //         <input
+  //           name="imgUrl"
+  //           value={form.imgUrl}
+  //           type="text"
+  //           placeholder="Image Url"
+  //           onChange={handleChange}
+  //           required
+  //         />
+
+
+  //         {editId ? (
+  //           <>
+  //             <button onClick={handleUpdate}>Update</button>
+  //             <button onClick={handleCancel}>Cancel</button>
+  //           </>
+  //         ) : (
+  //           <button onClick={handleAdd}>Add</button>
+  //         )}
+  //       </form>
+  //     </div>
+  //     <div>
+  //       <input type="text" onChange={(e) => setSearchVal(e.target.value)} />
+  //       <button onClick={fetchProducts}>Search</button>
+  //     </div>
+  //     <div>
+  //       <table border="1">
+  //         <thead>
+  //           <tr>
+  //             <th>Product Name</th>
+  //             <th>Description</th>
+  //             <th>Price</th>
+  //             <th>Image Url</th>
+  //             <th>Action</th>
+  //           </tr>
+  //         </thead>
+  //         {products.map((value) => (
+  //           <tbody key={value._id}>
+  //             <tr>
+  //               <td>{value.productName}</td>
+  //               <td>{value.description}</td>
+  //               <td>{value.price}</td>
+  //               <td>{value.imgUrl}</td>
+  //               <td>
+  //                 <button onClick={() => handleEdit(value)}>Edit</button>
+  //                 <button onClick={() => handleDelete(value._id)}>
+  //                   Delete
+  //                 </button>
+  //               </td>
+  //             </tr>
+  //           </tbody>
+  //         ))}
+  //       </table>
+  //     </div>
+  //     <div>
+  //       <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+  //         Previous
+  //       </button>
+  //       Page {page} of {totalPages}
+  //       <button
+  //         disabled={page === totalPages}
+  //         onClick={() => setPage(page + 1)}
+  //       >
+  //         Next
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 }

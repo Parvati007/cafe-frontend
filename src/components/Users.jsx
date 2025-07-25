@@ -183,20 +183,6 @@ export default function Users() {
   ))}
 </tbody>
 
-      {/* <tbody>
-        {users.map((value) => (
-          <tr key={value._id}>
-            <td>{value.firstName}</td>
-            <td>{value.lastName}</td>
-            <td>{value.email}</td>
-            <td>{value.role}</td>
-            <td>
-              <button onClick={() => handleEdit(value)}>Edit</button>
-              <button onClick={() => handleDelete(value._id)}>Delete</button>
-            </td>
-          </tr>
-        ))}
-      </tbody> */}
     </table>
     </div>
 
