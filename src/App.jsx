@@ -16,10 +16,12 @@ import Login from "./components/Login";
 import Products from "./components/Products";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
+
 export const AppContext = createContext();
 function App() {
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState({});
+  
   return (
     <div className="App-Container">
       <AppContext.Provider value={{ cart, setCart, user, setUser }}>
